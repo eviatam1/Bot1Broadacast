@@ -26,5 +26,6 @@ async def send(ctx, *sendit):
 async def gen(ctx):
     guild = ctx.guild
     await guild.create_role(name="PRMS")
-
+    
+bot.load_extension('libneko.extras.help')
 bot.run(os.environ.get('TOKEN'))
