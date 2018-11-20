@@ -1,9 +1,11 @@
 from discord.ext import commands
 import discord
+import os
+import logging
 
+logging.basicConfig(level='INFO')
 
-
-bot = commands.Bot(command_prefix='?')
+bot = commands.Bot(command_prefix="?", description="help")
 @bot.event
 async def on_ready():
   print('Im ready!')
@@ -24,4 +26,5 @@ async def send(ctx, *sendit):
 async def gen(ctx):
     guild = ctx.guild
     await guild.create_role(name="PRMS")
-bot.run('NTEyODY2NzQ4MTY1MzkwMzQ4.DtX5VA.Gm1De7XMkTjhC-VJOyqCGY5P5RM')
+
+bot.run(os.environ.get('TOKEN'))
