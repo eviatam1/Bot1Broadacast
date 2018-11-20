@@ -10,6 +10,21 @@ bot = commands.Bot(command_prefix="?", description="help")
 async def on_ready():
   print('Im ready!')
 @bot.command()
+@commands.has_permissions(ban_members=True)
+async def ban(ctx, member: discord.Member):
+    await member.ban()
+    await ctx.send('User has been banned.')
+@bot.command()
+@commands.has_permissions(kick_members=True)
+async def kick(ctx, member: discord.Member):
+    await member.kick()
+    await ctx.send('User has been kicked.')
+
+@bot.command()
+async def invite(ctx,):
+  await ctx.send('https://discord.gg/ZP888ss Perm Invite')
+
+@bot.command()
 async def send(ctx, *sendit):
     count = 0
     if not "PRMS" in [x.name for x in ctx.author.roles]:
