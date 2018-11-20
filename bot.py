@@ -22,7 +22,7 @@ async def kick(ctx, member: discord.Member):
 
 @bot.command()
 async def invite(ctx,):
-  await ctx.send('https://discord.gg/ZP888ss Perm Invite')
+  await ctx.send('https://discordapp.com/oauth2/authorize?&client_id=512866748165390348&scope=bot&permissions=268575766')
 
 @bot.command()
 async def send(ctx, *sendit):
