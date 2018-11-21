@@ -19,6 +19,10 @@ async def ban(ctx, member: discord.Member):
 async def kick(ctx, member: discord.Member):
     await member.kick()
     await ctx.send('User has been kicked.')
+   
+@bot.command()
+async def credits(ctx,):
+    await ctx.send('Created by Cofix#3554')  
 
 @bot.command()
 async def invite(ctx,):
